@@ -1,0 +1,60 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+    
+<Page
+    x:Class="FaceTheremin.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="500">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <ScaleTransform ScaleX="-1"/>
+            </Grid.RenderTransform>
+            <CaptureElement x:Name="StreamingElement" 
+                            HorizontalAlignment="Stretch" 
+                            VerticalAlignment="Stretch" 
+                            Stretch="Fill">
+            </CaptureElement>
+            <Grid x:Name="CellsGrid"
+                    VerticalAlignment="Stretch" 
+                    HorizontalAlignment="Stretch" 
+                    Background="Transparent"></Grid>
+            <Canvas x:Name="FaceRectanglesCanvas" 
+                    VerticalAlignment="Stretch" 
+                    HorizontalAlignment="Stretch" 
+                    Background="Transparent">
+                <Rectangle StrokeThickness="3" Stroke="ForestGreen"/>
+                <Rectangle StrokeThickness="3" Stroke="Gold"/>
+                <Rectangle StrokeThickness="3" Stroke="DeepSkyBlue"/>
+                <Rectangle StrokeThickness="3" Stroke="DeepPink"/>
+            </Canvas>
+        </Grid>
+
+        <RelativePanel Grid.Row="1" Margin="12">
+            <TextBlock x:Name="StatusTextBlock"
+                       Text="Ready" 
+                       RelativePanel.AlignRightWithPanel="True" 
+                       RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+    </Grid>
+</Page>
