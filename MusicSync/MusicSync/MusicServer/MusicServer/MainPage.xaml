@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="MusicServer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+            <!-- Title -->
+            <TextBlock x:Name="TitleTextBlock" Text="Music Server" FontSize="30" HorizontalAlignment="Center" Margin="4"/>
+
+            <!-- IP Address of the Host -->
+            <StackPanel x:Name="IPAddressStackPanel" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:Name="IPAddressTextBlock" Text="Your IP Address: " HorizontalAlignment="Left" Margin="4"/>
+                <TextBlock x:Name="HostIPAddressTextBlock" Text="" HorizontalAlignment="Right" Margin="4"/>
+            </StackPanel>
+
+            <!-- Media Selection Panel -->
+            <StackPanel x:Name="MediaFileSelectionStackPanel" Orientation="Horizontal" Margin="4" HorizontalAlignment="Center">
+                <Button x:Name="SelectMediaFileButton" Content="Select media file" HorizontalAlignment="Right" Click="SelectButton_Click" IsEnabled="False"/>
+            </StackPanel>
+
+            <!-- Media Controls Panel -->
+            <StackPanel x:Name="ControlStackPanel" Orientation="Horizontal">
+                <Button x:Name="SendButton" Content="Send" Margin="4" Click="SendButton_Click" IsEnabled="False" Width="120"/>
+                <Button x:Name="PlayButton" Grid.Row="1" Content="Play" Margin="4" Click="PlayButton_Click" IsEnabled="False" Width="120"/>
+            </StackPanel>
+        
+            <!-- Message Log ListView -->
+            <ListView x:Name="MessageLogListView" />
+        </StackPanel>
+    </Grid>
+</Page>
